@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  height: 50px;
+}
+
+h1#title {
+  width: 25%;
+}
+
+nav#navigate {
+  height: 100%;
+  margin: auto;
+  width: 20%;
+  box-shadow: 2px 1px 8px 0 black;
+  border-radius: 0px 0px 10px 10px;
+  display: flex;
+}
+
+a {
+  height: 100%;
+  width: 33%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
