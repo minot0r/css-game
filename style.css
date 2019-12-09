@@ -1,31 +1,45 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
 }
 
-header {
+header#head {
+  height: 80px;
+  box-shadow: 0 2px 2px 0 black;
   display: flex;
-  height: 50px;
 }
 
 h1#title {
+  margin: 0;
+  height: 100%;
   width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav#navigate {
-  height: 100%;
-  margin: auto;
-  width: 20%;
-  box-shadow: 2px 1px 8px 0 black;
+  height: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 270px;
+  box-shadow: 0px 2px 2px 0 black;
   border-radius: 0px 0px 10px 10px;
   display: flex;
 }
 
-a {
+#navigate a {
   height: 100%;
-  width: 33%; 
+  width: 90px; 
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
+
+#navigate a:hover {
+  background-color: lightgray;
 }
