@@ -5,17 +5,17 @@
     <title>ESC-ape Game</title>
     <meta charset="utf8">
 
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-    <link rel="stylesheet" href="public/css/nes.css">
+    <link rel="stylesheet" href="https://unpkg.com/nes.css@2.2.1/css/nes.min.css">
     <link rel="stylesheet" href="public/css/ESC.css">
 </head>
 
 <body>
     <div class="esc-container">
-        <section class="nes-container with-title is-rounded">
-            <h3 class="title">ESC-ape GAME - Sélecteur de niveaux</h3>
+        <section class="nes-container with-title is-rounded clearfix">
+            <h3 class="title"><a class="nes-btn" href="">ESC</a>-ape GAME - Sélecteur de niveaux</h3>
             <section class="message-list">
-                <section class="message -left">
+
+                <section class="message">
                     <div class="nes-balloon from-left">
                         <p><span class="nes-text is-success">Bonjour !</span></p>
                         <br>
@@ -23,14 +23,38 @@
                             ? Bon.</p>
                         <br>
                         <p>Si c'est votre première fois ici je vous conseille d'essayer <span
-                                class="nes-text is-warning">le tutoriel ;)</span></p>
+                                class="nes-text is-warning">le tutoriel ;)</span>
+                        </p>
                     </div>
                 </section>
+
+                <input type="checkbox" id="ready" class="nes-checkbox esc-ready-button" />
+                <label for="ready" class="esc-float-right">
+                    <span>Je suis prêt</span>
+                </label>
+
+                <section class="message esc-float-right" id="first">
+                    <div class="nes-balloon from-right">
+                        <p>Je veux commencer l'aventure !</p>
+                    </div>
+                </section>
+
+                <section class="message" id="second">
+                    <div class="nes-balloon from-left">
+                        <p>Bien !</p>
+                        <br>
+                        <p>Voici les niveaux !</p>
+                    </div>
+                </section>
+
             </section>
-            <label for="ready">
-                <input type="checkbox" id="ready" class="nes-checkbox">
-                <span>Je suis prêt</span>
-            </label>
+        </section>
+        <br>
+        <section class="nes-container with-title is-rounded">
+            <p class="title">Niveaux</p>
+            <a class="nes-btn is-primary" href="#">Tutoriel</a>
+            <a class="nes-btn" href="#">Niveau 1</a>
+            <a class="nes-btn" href="#">Niveau 2</a>
         </section>
     </div>
 </body>

@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+@keyframes appear {
+    from {
+        display: none;
+        opacity: 0;
+    }
+
+    to {
+        display: block;
+        opacity: 1;
+    }
+}
+
 body {
     margin: 50px;
 }
@@ -5,4 +19,46 @@ body {
 div.esc-container {
     margin: auto;
     width: 80%;
+}
+
+.esc-float-right {
+    float: right;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+input[type=checkbox].esc-ready-button {
+    display: none;
+}
+
+input[type=checkbox].esc-ready-button ~ label {
+    border-color: #000;
+    border-style: solid;
+    border-width: 4px;
+    padding: 10px 10px;
+    box-shadow: 4px 4px black;
+    transition: display 1s;
+}
+
+input[type=checkbox].esc-ready-button:checked ~ label{
+   display: none;
+}
+
+input[type=checkbox].esc-ready-button ~ .message{
+    display: none;
+}
+
+input[type=checkbox].esc-ready-button:checked ~ #first{
+    display: block;
+    animation: appear 3s;
+}
+
+input[type=checkbox].esc-ready-button:checked ~ #second{
+    display: block;
+    animation-delay: 3s;
+    animation: appear 3s;
 }
