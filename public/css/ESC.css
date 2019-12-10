@@ -12,6 +12,10 @@
     }
 }
 
+:root {
+    --anim-time: 1s;
+}
+
 body {
     margin: 50px;
 }
@@ -35,7 +39,7 @@ input[type=checkbox].esc-ready-button {
     display: none;
 }
 
-input[type=checkbox].esc-ready-button ~ label {
+label#ready-button {
     border-color: #000;
     border-style: solid;
     border-width: 4px;
@@ -44,21 +48,29 @@ input[type=checkbox].esc-ready-button ~ label {
     transition: display 1s;
 }
 
-input[type=checkbox].esc-ready-button:checked ~ label{
+input[type=checkbox].esc-ready-button:checked ~ .esc-container .nes-container .message-list label#ready-button{
    display: none;
 }
 
-input[type=checkbox].esc-ready-button ~ .message{
+input[type=checkbox].esc-ready-button ~ .esc-container .nes-container .message-list .message:not(#default_message){
     display: none;
 }
 
-input[type=checkbox].esc-ready-button:checked ~ #first{
+input[type=checkbox].esc-ready-button:checked ~ .esc-container .nes-container .message-list #player_message{
     display: block;
-    animation: appear 3s;
+    animation: appear var(--anim-time);
 }
 
-input[type=checkbox].esc-ready-button:checked ~ #second{
+input[type=checkbox].esc-ready-button:checked ~ .esc-container .nes-container .message-list #response_message{
+    animation: appear var(--anim-time) var(--anim-time) backwards;
     display: block;
-    animation-delay: 3s;
-    animation: appear 3s;
+}
+
+input[type=checkbox].esc-ready-button ~ .esc-container .nes-container:last-child{
+    display: none;
+}
+
+input[type=checkbox].esc-ready-button:checked ~ .esc-container .nes-container:last-child{
+    animation: appear var(--anim-time) calc(2 * var(--anim-time)) backwards;
+    display: block;
 }
