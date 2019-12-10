@@ -16,6 +16,10 @@
     --anim-time: 1s;
 }
 
+.message {
+    width: 100%;
+}
+
 body {
     margin: 50px;
 }
