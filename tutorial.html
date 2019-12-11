@@ -12,18 +12,32 @@
 </head>
 
 <body>
+    <input type="checkbox" id="first-message-answer">
+    <input type="checkbox" id="second-message-answer">
     <div id="esc-helper">
-        <div id="first-message">
-            <section class="message-list">
-                <section class="message">
-                    <div class="nes-balloon from-left">
-                        <p>
-                            Hello World!
-                        </p>
-                    </div>
-                </section>
+        <section class="message-list">
+            <section class="message">
+                <div class="nes-balloon from-left" id="first-message">
+                    <p>
+                        Salut je suis <span class="nes-text is-primary">Vel</span>
+                        ici pour vous <span class="nes-text is-error">aider</span> dans votre première partie de
+                        <span class="nes-text is-warning">ESC-ape Game !</span>
+                    </p>
+                </div>
+                <label for="first-message-answer">
+                    Ok !
+                </label>
+                <div class="nes-balloon from-left" id="second-message">
+                    <p>
+                        Ici se trouve ton <span class="nes-text is-success">environnement de jeu</span>.
+                        C'est ici que le jeu va se dérouler et que tu vas devoir répondre a des <span class="nes-text is-error">énigmes</span>.
+                    </p>
+                </div>
+                <label for="second-message-answer">
+                    C'est compris !
+                </label>
             </section>
-        </div>
+        </section>
     </div>
     <div class="esc-container esc-canvas">
         <div class="nes-container is-rounded">

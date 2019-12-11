@@ -5,6 +5,28 @@ div#esc-helper {
     left: 35px;
 }
 
-div#esc-helper #first-message {
-    animation: appear 1s 2s backwards;
+div#esc-helper #first-message,
+div#esc-helper label[for=first-message-answer] {
+    animation: appear 1s 1s backwards;
+}
+
+#first-message-answer:checked ~ div#esc-helper #first-message,
+#first-message-answer:checked ~ div#esc-helper label[for=first-message-answer] {
+    display: none;
+}
+
+div#esc-helper #second-message,
+div#esc-helper label[for=second-message-answer] {
+    visibility: hidden;
+}
+
+#first-message-answer:checked ~ div#esc-helper #second-message,
+#first-message-answer:checked ~ div#esc-helper label[for=second-message-answer] {
+    visibility: visible;
+    animation: appear 1s 1s both;
+}
+
+#second-message-answer:checked ~ div#esc-helper #second-message,
+#second-message-answer:checked ~ div#esc-helper label[for=second-message-answer] {
+    display: none;
 }
