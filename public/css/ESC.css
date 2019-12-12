@@ -12,11 +12,16 @@
     }
 }
 
+body {
+    margin: 50px;
+}
+
 input[type=checkbox] {
     display: none;
 }
 
 label {
+    background-color: white;
     border-color: #000;
     border-style: solid;
     border-width: 4px;
@@ -27,7 +32,7 @@ label {
 
 div.esc-container {
     margin: auto;
-    width: 80%;
+    width: 1072px;
 }
 
 .esc-float-right {

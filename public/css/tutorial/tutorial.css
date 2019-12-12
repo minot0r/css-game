@@ -1,3 +1,22 @@
+@keyframes lightup-terrain {
+    25% {
+        box-shadow: 10px 10px #92cc41;
+        background-color: #92cc41;
+    }
+    50% {
+        box-shadow: none;
+        background-color: transparent;
+    }
+    75% {
+        box-shadow: 10px 10px #92cc41;
+        background-color: #92cc41;
+    }
+    100% {
+        box-shadow: none;
+        background-color: transparent;
+    }
+}
+
 div#esc-helper {
     z-index: 1;
     position: absolute;
@@ -23,10 +42,19 @@ div#esc-helper label[for=second-message-answer] {
 #first-message-answer:checked ~ div#esc-helper #second-message,
 #first-message-answer:checked ~ div#esc-helper label[for=second-message-answer] {
     visibility: visible;
-    animation: appear 1s 1s both;
+    animation: appear 1s 3s both;
+    
+}
+
+#first-message-answer:checked ~ div.esc-container #esc-canvas {
+    animation: lightup-terrain 3s;
 }
 
 #second-message-answer:checked ~ div#esc-helper #second-message,
 #second-message-answer:checked ~ div#esc-helper label[for=second-message-answer] {
     display: none;
+}
+
+#second-message-answer:checked ~ div.esc-container #esc-canvas {
+    
 }

@@ -6,10 +6,6 @@
     width: 100%;
 }
 
-body {
-    margin: 50px;
-}
-
 input[type=checkbox].esc-ready-button:checked ~ .esc-container .nes-container .message-list label#ready-button{
    display: none;
 }
