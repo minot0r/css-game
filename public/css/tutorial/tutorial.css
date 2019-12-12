@@ -58,3 +58,11 @@ div#esc-helper label[for=second-message-answer] {
 #second-message-answer:checked ~ div.esc-container #esc-canvas {
     
 }
+
+input:valid#hello ~ p {
+    display: block;
+}
+
+input#hello ~ p {
+    display: none;
+}
