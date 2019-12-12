@@ -1,0 +1,11 @@
+#password.nes-input.is-success {
+  outline-color: black;
+}
+
+input:valid ~ p {
+  display: block;
+}
+
+input ~ p {
+  display: none;
+}
