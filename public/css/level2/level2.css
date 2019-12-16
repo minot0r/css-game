@@ -63,3 +63,14 @@ div.hoverable-object#sign-four {
 div.hoverable-object#sign-four:hover ~ label#sign-four-label {
     display: block;
 }
+
+/* Boulet de canon */
+
+div.hoverable-object#boulet {
+    left: 32px;
+    top: 448px;
+}
+
+div.hoverable-object#boulet:hover ~ label#boulet-label {
+    display: block;
+}
