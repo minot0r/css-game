@@ -1,0 +1,128 @@
+@keyframes lightup-terrain {
+    25% {
+        box-shadow: 10px 10px #92cc41;
+        background-color: #92cc41;
+    }
+    50% {
+        box-shadow: none;
+        background-color: transparent;
+    }
+    75% {
+        box-shadow: 10px 10px #92cc41;
+        background-color: #92cc41;
+    }
+    100% {
+        box-shadow: none;
+        background-color: transparent;
+    }
+}
+
+@keyframes wait {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+div.esc-container #esc-canvas {
+    background-image: url(../../textures/carte_tutoriel.png);
+    background-size: cover;
+}
+
+div#esc-helper {
+    z-index: 1;
+    position: absolute;
+    top: 35px;
+    left: 35px;
+}
+
+div#esc-helper #first-message,
+div#esc-helper label[for=first-message-answer] {
+    animation: appear 1s 1s backwards;
+}
+
+#first-message-answer:checked ~ div#esc-helper #first-message,
+#first-message-answer:checked ~ div#esc-helper label[for=first-message-answer] {
+    display: none;
+}
+
+/* Deuxième message */
+
+div#esc-helper #second-message,
+div#esc-helper label[for=second-message-answer] {
+    visibility: hidden;
+}
+
+#first-message-answer:checked ~ div#esc-helper #second-message,
+#first-message-answer:checked ~ div#esc-helper label[for=second-message-answer] {
+    visibility: visible;
+    animation: appear 1s 3s both;
+}
+
+#first-message-answer:checked ~ div.esc-container #esc-canvas {
+    animation: lightup-terrain 3s;
+}
+
+#second-message-answer:checked ~ div#esc-helper #second-message,
+#second-message-answer:checked ~ div#esc-helper label[for=second-message-answer] {
+    display: none;
+}
+
+/* 3eme message */
+
+div#esc-helper #third-message,
+div#esc-helper label[for=third-message-answer] {
+    visibility: hidden;
+}
+
+#second-message-answer:checked ~ div#esc-helper #third-message,
+#second-message-answer:checked ~ div#esc-helper label[for=third-message-answer] {
+    visibility: visible;    
+    animation: appear 1s both;
+}
+
+#third-message-answer:checked ~ div#esc-helper #third-message,
+#third-message-answer:checked ~ div#esc-helper label[for=third-message-answer] {
+    display: none;
+}
+
+/* Clic sur le pot et coffre fort */
+
+label#clickable-pot {
+    display: block;
+    height: 32px;
+    width: 32px;
+    position: relative;
+    left: 950px;
+    top: 64px;
+    opacity: 0;
+    z-index: 1;
+}
+
+div#esc-helper #pot-message,
+div#esc-helper #pot-message-next,
+div#esc-helper #coffre-fort-answer,
+div#esc-helper #tutorial-finish {
+    visibility: hidden;
+}
+
+#pot-answer:checked ~ div#esc-helper #pot-message {
+    visibility: visible;    
+}
+
+#pot-answer:checked ~ div#esc-helper #pot-message-next {
+    animation: wait 1s 1s backwards;
+    visibility: visible;
+}
+
+#pot-answer:checked ~ div#esc-helper #coffre-fort-answer {
+    animation: wait 1s 2s backwards;
+    visibility: visible;
+}
+
+#coffre-fort-answer:valid ~ #tutorial-finish {
+    animation: appear 1s both;
+    visibility: visible;
+}

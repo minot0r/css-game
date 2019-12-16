@@ -1,0 +1,34 @@
+:root {
+    --anim-time: 1s;
+}
+
+.message {
+    width: 100%;
+}
+
+input[type=checkbox].esc-ready-button:checked ~ .esc-container .nes-container .message-list label#ready-button{
+   display: none;
+}
+
+input[type=checkbox].esc-ready-button ~ .esc-container .nes-container .message-list .message:not(#default_message){
+    display: none;
+}
+
+input[type=checkbox].esc-ready-button:checked ~ .esc-container .nes-container .message-list #player_message{
+    display: block;
+    animation: appear var(--anim-time);
+}
+
+input[type=checkbox].esc-ready-button:checked ~ .esc-container .nes-container .message-list #response_message{
+    animation: appear var(--anim-time) var(--anim-time) backwards;
+    display: block;
+}
+
+input[type=checkbox].esc-ready-button ~ .esc-container .nes-container:last-child{
+    display: none;
+}
+
+input[type=checkbox].esc-ready-button:checked ~ .esc-container .nes-container:last-child{
+    animation: appear var(--anim-time) calc(2 * var(--anim-time)) backwards;
+    display: block;
+}

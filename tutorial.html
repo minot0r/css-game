@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tutoriel - ESC-ape Game</title>
+    <meta charset="utf8">
+
+    <link rel="stylesheet" href="public/css/game/game.css">
+    <link rel="stylesheet" href="public/css/tutorial/tutorial.css">
+    <link rel="stylesheet" href="https://unpkg.com/nes.css@2.2.1/css/nes.min.css">
+    <link rel="stylesheet" href="public/css/ESC.css">
+</head>
+
+<body>
+    <input type="checkbox" id="first-message-answer">
+    <input type="checkbox" id="second-message-answer">
+    <input type="checkbox" id="third-message-answer">
+    <input type="checkbox" id="pot-answer">
+    <div id="esc-helper">
+        <section class="message-list">
+            <section class="message">
+                <div class="nes-balloon from-left" id="first-message">
+                    <p>
+                        Salut je suis <span class="nes-text is-primary">Vel</span>
+                        ici pour vous <span class="nes-text is-error">aider</span> dans votre première partie de
+                        <span class="nes-text is-warning">ESC-ape Game !</span>
+                    </p>
+                </div>
+                <label for="first-message-answer">
+                    Ok !
+                </label>
+                <div class="nes-balloon from-left" id="second-message">
+                    <p>
+                        Ici se trouve ton <span class="nes-text is-success">environnement de jeu</span>.
+                        C'est ici que le jeu va se dérouler et que tu vas devoir répondre a des <span class="nes-text is-error">énigmes</span>.
+                    </p>
+                </div>
+                <label for="second-message-answer">
+                    C'est compris !
+                </label>
+                
+                <div class="nes-balloon from-left" id="third-message">
+                    <p>
+                        Tu vois le pot en <span class="nes-text is-success">haut à droite ?</span>
+                        Il y'a un message <span class="nes-text is-error">caché</span> dedans, tu peux aller voir ?
+                    </p>
+                </div>
+                <label for="third-message-answer">
+                   D'accord
+                </label>
+                <div class="nes-balloon from-left" id="pot-message">
+                    <p>
+                        Mais !!!?? Il y un papier dans ce pot !
+                    </p>
+                </div>
+                <br>
+                <div class="nes-balloon from-left" id="pot-message-next">
+                    <p>
+                        Il y'a écrit : <span class="nes-text is-warning">5278</span>. Essaye de mettre le code dans le coffre fort !
+                    </p>
+                </div>
+                <input type="text" id="coffre-fort-answer" placeholder="Coffre fort" class="nes-input" required pattern="^5278$">
+                <p id="tutorial-finish">
+                    Bravo ! <a href="levels.html">Finir le tutoriel</a>
+                </p>
+            </section>
+        </section>
+    </div>
+    <div class="esc-container">
+        <div class="nes-container is-rounded" id="esc-canvas">
+            <label for="pot-answer" id="clickable-pot"></label>
+        </div>
+    </div>
+</body>
+
+</html>

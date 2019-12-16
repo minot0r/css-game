@@ -1,0 +1,4 @@
+div.esc-container #esc-canvas {
+    background-image: url(../../textures/carte_niveau1.png);
+    background-size: cover;
+}
