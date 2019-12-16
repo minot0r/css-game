@@ -1,0 +1,65 @@
+div.esc-container #esc-canvas {
+    background-image: url(../../textures/carte_niveau2.png);
+    background-size: cover;
+}
+
+div.hoverable-object {
+    height: 32px;
+    width: 32px;
+    z-index: 1;
+    position: absolute;
+    display: block;
+    background-color: red;
+}
+
+div.hoverable-object ~ label {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+}
+
+/* Panneau 1 */
+
+div.hoverable-object#sign-one {
+    left: 64px;
+    top: 96px;
+}
+
+div.hoverable-object#sign-one:hover ~ label#sign-one-label {
+    display: block;
+}
+
+/* Panneau 2 */
+
+div.hoverable-object#sign-two {
+    left: 608px;
+    top: 160px;
+}
+
+div.hoverable-object#sign-two:hover ~ label#sign-two-label {
+    display: block;
+}
+
+/* Panneau 3 */
+
+div.hoverable-object#sign-three {
+    left: 944px;
+    top: 512px;
+}
+
+div.hoverable-object#sign-three:hover ~ label#sign-three-label {
+    display: block;
+}
+
+/* Panneau 4 */
+
+div.hoverable-object#sign-four {
+    left: 944px;
+    top: 64px;
+}
+
+div.hoverable-object#sign-four:hover ~ label#sign-four-label {
+    display: block;
+}
