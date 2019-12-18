@@ -12,13 +12,31 @@ div.hoverable-object {
     background-color: red;
 }
 
-div.hoverable-object ~ label {
+div.hoverable-object + label {
     display: none;
     position: absolute;
     top: 0px;
     left: 0px;
     z-index: 2;
 }
+
+label.clickable-object {
+	height: 32px;
+	width: 32px;
+	z-index: 1;
+	position: absolute;
+	display: block;
+	background-color: blue;
+}
+
+label.clickable-object + label {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    z-index: 2;
+}
+
 
 /* Panneau 1 */
 
@@ -27,7 +45,7 @@ div.hoverable-object#sign-one {
     top: 96px;
 }
 
-div.hoverable-object#sign-one:hover ~ label#sign-one-label {
+div.hoverable-object#sign-one:hover + label#sign-one-label {
     display: block;
 }
 
@@ -38,7 +56,7 @@ div.hoverable-object#sign-two {
     top: 160px;
 }
 
-div.hoverable-object#sign-two:hover ~ label#sign-two-label {
+div.hoverable-object#sign-two:hover + label#sign-two-label {
     display: block;
 }
 
@@ -49,7 +67,7 @@ div.hoverable-object#sign-three {
     top: 512px;
 }
 
-div.hoverable-object#sign-three:hover ~ label#sign-three-label {
+div.hoverable-object#sign-three:hover + label#sign-three-label {
     display: block;
 }
 
@@ -60,7 +78,7 @@ div.hoverable-object#sign-four {
     top: 64px;
 }
 
-div.hoverable-object#sign-four:hover ~ label#sign-four-label {
+div.hoverable-object#sign-four:hover + label#sign-four-label {
     display: block;
 }
 
@@ -71,6 +89,84 @@ div.hoverable-object#boulet {
     top: 448px;
 }
 
-div.hoverable-object#boulet:hover ~ label#boulet-label {
+div.hoverable-object#boulet:hover + label#boulet-label {
     display: block;
+}
+
+/* Tonneau 1 */
+
+input[type=checkbox]#tonneau-one-input ~ .esc-container .nes-container label.clickable-object[for=tonneau-one-input] + label {
+	visibility: hidden;
+}
+
+input[type=checkbox]#tonneau-one-input:checked ~ .esc-container .nes-container label.clickable-object[for=tonneau-one-input] + label {
+	visibility: visible;
+}
+
+label[for=tonneau-one-input] {
+    top: 288px;
+    left: 624px;
+}
+
+/* Tonneau 2 */
+
+input[type=checkbox]#tonneau-two-input ~ .esc-container .nes-container label.clickable-object[for=tonneau-two-input] + label {
+	visibility: hidden;
+}
+
+input[type=checkbox]#tonneau-two-input:checked ~ .esc-container .nes-container label.clickable-object[for=tonneau-two-input] + label {
+	visibility: visible;
+}
+
+label[for=tonneau-two-input] {
+    top: 288px;
+    left: 656px;
+}
+
+/* Tonneau 3 */
+
+input[type=checkbox]#tonneau-three-input ~ .esc-container .nes-container label.clickable-object[for=tonneau-three-input] + label {
+	visibility: hidden;
+}
+
+input[type=checkbox]#tonneau-three-input:checked ~ .esc-container .nes-container label.clickable-object[for=tonneau-three-input] + label {
+	visibility: visible;
+}
+
+label[for=tonneau-three-input] {
+    top: 320px;
+    left: 624px;
+    height: 48px;
+}
+
+/* Tonneau 4 */
+
+input[type=checkbox]#tonneau-four-input ~ .esc-container .nes-container label.clickable-object[for=tonneau-four-input] + label {
+	visibility: hidden;
+}
+
+input[type=checkbox]#tonneau-four-input:checked ~ .esc-container .nes-container label.clickable-object[for=tonneau-four-input] + label {
+	visibility: visible;
+}
+
+label[for=tonneau-four-input] {
+    top: 320px;
+    left: 656px;
+    height: 48px;
+}
+
+/* Tonneau 5 */
+
+input[type=checkbox]#tonneau-five-input ~ .esc-container .nes-container label.clickable-object[for=tonneau-five-input] + label {
+	visibility: hidden;
+}
+
+input[type=checkbox]#tonneau-five-input:checked ~ .esc-container .nes-container label.clickable-object[for=tonneau-five-input] + label {
+	visibility: visible;
+}
+
+label[for=tonneau-five-input] {
+    top: 320px;
+    left: 688px;
+    height: 48px;
 }

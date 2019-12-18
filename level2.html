@@ -19,6 +19,11 @@
             </section>
         </section>
     </div>
+	<input type="checkbox" id="tonneau-one-input">
+	<input type="checkbox" id="tonneau-two-input">
+	<input type="checkbox" id="tonneau-three-input">
+	<input type="checkbox" id="tonneau-four-input">
+	<input type="checkbox" id="tonneau-five-input">
     <div class="esc-container">
         <div class="nes-container is-rounded" id="esc-canvas">
             <div class="hoverable-object" id="sign-one"></div>
@@ -45,7 +50,39 @@
             <div class="hoverable-object" id="boulet"></div>
             <label id="boulet-label">
                 Un boulet de canon
-            </label>           
+            </label>    
+
+            <label class="clickable-object" for="tonneau-one-input"></label>
+            <label>
+                Il n'y a rien dans ce tonneau
+                <span class="nes-text is-disabled">(clickez pour le refermer)</span>
+            </label>
+
+            <label class="clickable-object" for="tonneau-two-input"></label>
+            <label>
+                Ce tonneau est vide
+                <span class="nes-text is-disabled">(clickez pour le refermer)</span>
+            </label>
+
+            <label class="clickable-object" for="tonneau-three-input"></label>
+           
+            <label>
+                Tonneau rempli de paille
+                <span class="nes-text is-disabled">(clickez pour le refermer)</span>
+            </label>
+            
+            <label class="clickable-object" for="tonneau-four-input"></label>
+            <label>
+                Il y'a un vieux papier dans ce tonneau,
+                il indique : <span class="nes-text is-success">"La cascade est pleine de ressources"</span>
+                <span class="nes-text is-disabled">(clickez pour le refermer)</span>
+            </label>
+
+            <label class="clickable-object" for="tonneau-five-input"></label>
+            <label>
+                On a jamais vu plus vide comme tonneau 
+                <span class="nes-text is-disabled">(clickez pour le refermer)</span>
+            </label>
         </div>
     </div>
 </body>
