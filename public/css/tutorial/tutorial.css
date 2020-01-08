@@ -1,6 +1,6 @@
 @keyframes lightup-terrain {
     25% {
-        box-shadow: 10px 10px #92cc41;
+        box-shadow: 40px 40px #92cc41;
         background-color: #92cc41;
     }
     50% {
@@ -8,7 +8,7 @@
         background-color: transparent;
     }
     75% {
-        box-shadow: 10px 10px #92cc41;
+        box-shadow: 40px 40px #92cc41;
         background-color: #92cc41;
     }
     100% {

@@ -12,26 +12,45 @@
 </head>
 
 <body>
-    <div id="esc-helper">
+    <input type="checkbox" id="tonneau-one-input">
+    <input type="checkbox" id="tonneau-two-input">
+    <input type="checkbox" id="tonneau-three-input">
+    <input type="checkbox" id="tonneau-four-input">
+    <input type="checkbox" id="tonneau-five-input">
+    <input type="checkbox" id="book-under-bench">
+    <input type="checkbox" id="cascade">
+    <input type="checkbox" id="dalle">
+    <input type="checkbox" id="password-completed">
+    <input type="checkbox" id="finish">
+    <div id="esc-interact">
         <section class="message-list">
             <section class="message">
-
+                <div class="nes-balloon from-left" id="enter-digit-popup">
+                    <p>
+                        Entrez le code pour débloquer la porte
+                    </p>
+                </div>
+                <input type="text" id="digit-button" placeholder="Code" class="nes-input" required pattern="^1482$">
+                <label id="cancel" for="cascade">
+                    Annuler
+                </label>
+                <label id="ok" for="password-completed">
+                    Ok
+                </label>
             </section>
         </section>
     </div>
-	<input type="checkbox" id="tonneau-one-input">
-	<input type="checkbox" id="tonneau-two-input">
-	<input type="checkbox" id="tonneau-three-input">
-	<input type="checkbox" id="tonneau-four-input">
-	<input type="checkbox" id="tonneau-five-input">
     <div class="esc-container">
         <div class="nes-container is-rounded" id="esc-canvas">
+            <label id="dialog-autel">
+                L'autel s'active !
+            </label>
             <div class="hoverable-object" id="sign-one"></div>
             <label id="sign-one-label">
                 Le panneau dit : Ce banc est un hommage à l'homme du Zoo,
                 il adorait lire...
             </label>
-            
+
             <div class="hoverable-object" id="sign-two"></div>
             <label id="sign-two-label">
                 Le panneau dit : Grotte des ours, le dernier nourrisseur y est mort
@@ -50,7 +69,7 @@
             <div class="hoverable-object" id="boulet"></div>
             <label id="boulet-label">
                 Un boulet de canon
-            </label>    
+            </label>
 
             <label class="clickable-object" for="tonneau-one-input"></label>
             <label>
@@ -65,12 +84,12 @@
             </label>
 
             <label class="clickable-object" for="tonneau-three-input"></label>
-           
+
             <label>
                 Tonneau rempli de paille
                 <span class="nes-text is-disabled">(clickez pour le refermer)</span>
             </label>
-            
+
             <label class="clickable-object" for="tonneau-four-input"></label>
             <label>
                 Il y'a un vieux papier dans ce tonneau,
@@ -80,8 +99,39 @@
 
             <label class="clickable-object" for="tonneau-five-input"></label>
             <label>
-                On a jamais vu plus vide comme tonneau 
+                On a jamais vu plus vide comme tonneau
                 <span class="nes-text is-disabled">(clickez pour le refermer)</span>
+            </label>
+
+            <label class="clickable-object" for="book-under-bench"></label>
+            <label>
+                C'est une encyclopédie qui parle de langage de cryptage, il y'a un marque page sur le code césar
+                <span class="nes-text is-disabled">(clickez pour le refermer)</span>
+            </label>
+
+            <label class="clickable-object" for="cascade"></label>
+            <label>
+                Vous avez trouvé un bouton a code, il semble activer quelquechose...
+            </label>
+
+            <div class="hoverable-object" id="bush-one"></div>
+            <label id="bush-one-label">
+                Aïe ça pique là-dedans
+            </label>
+
+            <label class="clickable-object" for="dalle"></label>
+            <label>
+                Une dalle mystérieuse...
+                <span class="nes-text is-disabled">(clickez pour le refermer)</span>
+            </label>
+            
+            <div id="autel-light"></div>
+            <label class="clickable-object" for="finish"></label>
+            <label>
+                Vous avez terminé les niveaux avec  <span class="nes-text is-success">succès</span> !<br>
+                <span class="nes-text is-success">Bien joué</span>!<br>
+                Grâce à vous, <span class="nes-text is-warning">Ape</span> s'est libéré!<br>
+                <a href="./levels.html">Retourner aux niveaux</a>
             </label>
         </div>
     </div>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
     <title>Niveau 1 - ESC-ape Game</title>
-    <meta charset="utf8">
+    <meta charset="utf-8">
 
     <link rel="stylesheet" href="public/css/game/game.css">
     <link rel="stylesheet" href="public/css/level1/level1.css">
@@ -12,21 +12,86 @@
 </head>
 
 <body>
-    <input type="checkbox" id="first-message-answer">
-    <input type="checkbox" id="second-message-answer">
-    <input type="checkbox" id="third-message-answer">
-    <input type="checkbox" id="pot-answer">
+    <input type="checkbox" id="task-answer">
+    <input type="checkbox" id="exit-button">
+    <input type="checkbox" id="chest1-button">
+    <input type="checkbox" id="chest2-button">
+    <input type="checkbox" id="hole-button">
+    <input type="checkbox" id="book-button">
+
     <div id="esc-helper">
         <section class="message-list">
             <section class="message">
-                <!-- Messages d'aide -->
+
+                <div class="nes-balloon from-left" id="task">
+                	<p>
+                		Le singe, <span class="nes-text is-primary">Ape</span>, est enfermé dans ce parc. <span class="nes-text is-error">Trouve</span> les différents indices et <span class="nes-text is-error">aide-le</span> à sortir du parc.
+                	</p>
+                </div>
+                <label for="task-answer">
+                	C'est parti!
+                </label>
+
             </section>
         </section>
     </div>
+
+
+
     <div class="esc-container">
         <div class="nes-container is-rounded" id="esc-canvas">
+          <label class="clickable-object" for="exit-button" id="exit"></label>
+          <div class="nes-container click" id="exit-content">
+            <p>Afin de partir de ce parc, entrez le bon <span class="nes-text is-primary">mot de passe</span>:</p>
+          </div>
+          <input type="text" class="nes-input click" id="exit-inp" placeholder="Mot de passe" required pattern="^Evergreen$">
+          <div class="nes-container is-rounded" id="finish">
+            <p>Bien joué à vous!</p>
+            <p><span class="nes-text is-primary">Ape</span> a réussi à sortir du parc avec votre aide. Mais il est de nouveau coincé.</p>
+            <p>Allez l'aider à sortir de la prochaine zone!</p>
+            <a href="level2.html">Par ici!</a>
+          </div>
+
+        	<div class="hoverable-object" id="sign"></div>
+        	<label class="hover" id="sign-message">
+              Ce panneau est vieux, on y distingue seulement quelques lettres. Il y a sans doute des indices pour retrouver les autres.<br>
+              Panneau: <span class="nes-text is-success">E</span><span class="nes-text is-error">zivkvi</span><span class="nes-text is-success">en</span>
+          </label>
+
+            <div class="hoverable-object" id="flag"></div>
+            <label class="hover" id="flag-message">
+            	Ce drapeau est celui du zoo, ce qui signifie que nous sommes bel et bien à l'intérieur.</label>
+
+            <label class="clickable-object" for="chest1-button" id="chest1"></label>
+            <div class="nes-container click" id="chest1-content">
+              <p>Il y a un coffre dans ce buisson!</p>
+              <p>Son contenu est un papier où il est écrit:</p>
+              <p><span class="nes-text is-primary">Le <span class="nes-text is-error">V</span> correspond au <span class="nes-text is-success">R</span> dans notre langue.</span></p>
+            </div>
+
+            <label class="clickable-object" for="chest2-button" id="chest2"></label>
+            <div class="nes-container click" id="chest2-content">
+              <p>Il y a un coffre derrière la fontaine!</p>
+              <p>Son contenu est un papier où il est écrit:</p>
+              <p><span class="nes-text is-primary">Il y a, à l'endroit où quelque chose flotte, un trou. Dans ce trou se trouve une des clés de vos soucis.</span></p>
+            </div>
+
+            <label class="clickable-object" for="hole-button" id="hole"></label>
+            <div class="nes-container click" id="hole-content">
+              <p>Il y a un trou ici ?</p>
+              <p>Il y a quelque chose à l'intérieur. Un papier où il est écrit:</p>
+              <p><span class="nes-text is-primary">Afin de retrouver les lettres manquantes, il faut trouver les traductions. Le <span class="nes-text is-error">K</span> correspond au <span class="nes-text is-success">G</span>.</span></p>
+            </div>
+
+            <label class="clickable-object" for="book-button" id="book"></label>
+            <div class="nes-container click" id="book-content">
+              <p>Il existait une ancienne civilisation qui n'avait que peu de différence avec notre écriture. Cette différence est assez simple à trouver. Pour pourrez ainsi lire tous les écrits qu'ils ont laissé derrière eux. Pour se faire, ici se trouve un petit exemple qui, nous espérons, va vous aider: si le A correspond au E, et A+4=E alors toutes les lettres auxquelles nous ajoutons 4 font la lettre de l'ancien monde.</p>
+            </div>
         </div>
     </div>
-</body>
 
+    <div class="esc-container nes-container is-rounded" id="help">
+      N'oubliez pas de recliquer au même endroit pour faire disparaître le message
+    </div>
+</body>
 </html>

@@ -1,6 +1,18 @@
+@keyframes fade {
+    0%,100% { opacity: 0 }
+    50% { opacity: 1 }
+  }
+
 div.esc-container #esc-canvas {
     background-image: url(../../textures/carte_niveau2.png);
     background-size: cover;
+}
+
+div#esc-interact {
+    z-index: 2;
+    position: absolute;
+    top: 35px;
+    left: 35px;
 }
 
 div.hoverable-object {
@@ -9,7 +21,7 @@ div.hoverable-object {
     z-index: 1;
     position: absolute;
     display: block;
-    background-color: red;
+    opacity: 0;
 }
 
 div.hoverable-object + label {
@@ -24,9 +36,8 @@ label.clickable-object {
 	height: 32px;
 	width: 32px;
 	z-index: 1;
-	position: absolute;
-	display: block;
-	background-color: blue;
+    position: absolute;
+    opacity: 0;
 }
 
 label.clickable-object + label {
@@ -52,7 +63,7 @@ div.hoverable-object#sign-one:hover + label#sign-one-label {
 /* Panneau 2 */
 
 div.hoverable-object#sign-two {
-    left: 608px;
+    left: 600px;
     top: 160px;
 }
 
@@ -169,4 +180,137 @@ label[for=tonneau-five-input] {
     top: 320px;
     left: 688px;
     height: 48px;
+}
+
+/* Livre sous le banc */
+
+input[type=checkbox]#book-under-bench ~ .esc-container .nes-container label.clickable-object[for=book-under-bench] + label {
+	visibility: hidden;
+}
+
+input[type=checkbox]#book-under-bench:checked ~ .esc-container .nes-container label.clickable-object[for=book-under-bench] + label {
+	visibility: visible;
+}
+
+label[for=book-under-bench] {
+    top: 166px;
+    left: 98px;
+    height: 16px;
+}
+
+/* Cascade et autel */
+
+input[type=checkbox]#cascade ~ .esc-container .nes-container label.clickable-object[for=cascade] + label {
+	visibility: hidden;
+}
+
+input[type=checkbox]#cascade:checked ~ .esc-container .nes-container label.clickable-object[for=cascade] + label {
+    visibility: visible;
+    animation: disappear 1s 2s forwards;
+}
+
+input[type=checkbox]#cascade:checked ~ .esc-container .nes-container label.clickable-object[for=cascade] {
+    display: none;
+}
+
+div#autel-light {
+    height: 64px;
+    width: 64px;
+    position: absolute;
+    left: 696px;
+    top: 464px;
+    background: url(../../textures/light.png);
+    background-size: cover;
+    display: none;
+}
+
+#enter-digit-popup,
+#enter-digit-popup + #digit-button {
+    display: none;
+}
+
+label#cancel {
+    display: none;
+}
+
+label[for=cascade]:not(#cancel) {
+    top: 128px;
+    left: 280px;
+    width: 64px;
+    height: 96px;
+}
+
+input[type=checkbox]#cascade:checked ~ #esc-interact .message-list .message #enter-digit-popup,
+input[type=checkbox]#cascade:checked ~ #esc-interact .message-list .message #enter-digit-popup + #digit-button,
+input[type=checkbox]#cascade:checked ~ #esc-interact .message-list .message label#cancel {
+    animation: appear 1s 2s backwards;
+    display: block;
+}
+
+label[for=password-completed] {
+    display: none;
+}
+
+input[type=text]#digit-button:valid ~ label[for=password-completed] {
+    display: block;
+}
+
+input[type=checkbox]#password-completed:checked ~ #esc-interact {
+    display: none;
+}
+
+#dialog-autel {
+    opacity: 0;
+}
+
+input[type=checkbox]#password-completed:checked ~ .esc-container #esc-canvas #dialog-autel {
+    animation: fade 5s;
+}
+
+input[type=checkbox]#password-completed:checked ~ .esc-container #esc-canvas #autel-light {
+    display: block;
+}
+
+label[for=finish] {
+    width: 48px;
+    height: 48px;
+    left: 700px;
+    top: 480px;
+}
+
+label[for=finish],
+label[for=finish] + label {
+    display: none;
+}
+
+input[type=checkbox]#password-completed:checked ~ .esc-container #esc-canvas label[for=finish],
+input[type=checkbox]#finish:checked ~ .esc-container #esc-canvas label[for=finish] + label {
+    display: block;
+}
+
+/* Buisson */
+
+div.hoverable-object#bush-one {
+    left: 64px;
+    top: 532px;
+}
+
+div.hoverable-object#bush-one:hover + label#bush-one-label {
+    display: block;
+}
+
+/* Dalle sous le banc */
+
+input[type=checkbox]#dalle ~ .esc-container .nes-container label.clickable-object[for=dalle] + label {
+	visibility: hidden;
+}
+
+input[type=checkbox]#dalle:checked ~ .esc-container .nes-container label.clickable-object[for=dalle] + label {
+	visibility: visible;
+}
+
+label[for=dalle] {
+    top: 320px;
+    left: 472px;
+    height: 16px;
 }
