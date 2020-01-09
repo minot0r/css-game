@@ -11,4 +11,4 @@ Nous sommes 4 sur ce projet de jeu en HTML/CSS. Nous comptons Valentin, Virgile,
 
 ## Lancer le serveur
 
-    sh start.sh && (firefox localhost:8080 || chrome locahost:8080)
+    sh start.sh & (firefox localhost:8080 || chrome locahost:8080)
