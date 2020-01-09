@@ -1,4 +1,144 @@
+html, body {
+  height: 100%;
+}
+
 div.esc-container #esc-canvas {
     background-image: url(../../textures/carte_niveau1.png);
     background-size: cover;
 }
+
+div#esc-helper {
+    position: absolute;
+    z-index: 1;
+    top: 35px;
+    left: 35px;
+}
+
+div#esc-helper #task, div#esc-helper label[for=task-answer] {
+    animation: appear 0.5s 1s backwards;
+}
+
+#task-answer:checked ~ div#esc-helper #task, #task-answer:checked ~ div#esc-helper label[for=task-answer] {
+    display: none;
+}
+
+div#help {
+    margin: auto;
+}
+
+/* Init */
+
+div.hoverable-object {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    opacity: 0;
+}
+div.hoverable-object + label {
+    display: none;
+    position: absolute;
+}
+
+label.clickable-object {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    opacity: 0;
+}
+.click {
+    display: none;
+    position: relative;
+    background-color: white;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+#finish {
+    display: none;
+    position: relative;
+    background-color: white;
+    margin-top: 50px;
+}
+
+/* IN GAME */
+/* Objects */
+
+.hoverable-object#sign {
+    top: 120px;
+    left: 980px;
+}
+.hoverable-object#flag {
+    top: 386px;
+    left: 940px;
+}
+.clickable-object#chest1 {
+    top: 32px;
+    left: 32px;
+}
+.clickable-object#chest2 {
+    top: 250px;
+    left: 564px;
+}
+.clickable-object#hole {
+    top: 468px;
+    left: 916px;
+}
+.clickable-object#exit {
+    top: 0px;
+    left: 312px;
+    width: 64px;
+    height: 64px;
+}
+.clickable-object#book {
+  top: 480px;
+  left: 800px;
+}
+
+/* Actions */
+
+#task-answer:checked ~ .esc-container #sign:hover ~ label#sign-message {
+    display: block;
+}
+#task-answer:checked ~ .esc-container #flag:hover ~ label#flag-message {
+    display: block;
+}
+#task-answer:checked ~ #chest1-button:checked ~ .esc-container div#chest1-content {
+    display: block;
+    animation: appear 0.5s backwards;
+}
+#task-answer:checked ~ #chest2-button:checked ~ .esc-container div#chest2-content {
+    display: block;
+    animation: appear 0.5s backwards;
+}
+#task-answer:checked ~ #hole-button:checked ~ .esc-container div#hole-content {
+    display: block;
+    animation: appear 0.5s backwards;
+}
+#task-answer:checked ~ #book-button:checked ~ .esc-container div#book-content {
+  display: block;
+  animation: appear 0.5s backwards;
+}
+
+/* Sortie */
+
+#exit-button:checked ~ div.esc-container div#exit-content {
+    display: block;
+    animation: appear 0.5s backwards;
+}
+#exit-button:checked ~ div.esc-container input#exit-inp {
+    display: block;
+    animation: appear 0.5s backwards;
+}
+#exit-inp:valid {
+    color: green;
+}
+#exit-inp:valid ~ #finish {
+    display: block;
+    animation: appear 2s backwards;
+}
+
+/* Fonctions */
